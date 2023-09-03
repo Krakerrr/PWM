@@ -17,7 +17,7 @@ void PWM_Timer_Initialization(void)
 	hPWM.Init.Period		= 20000-1;
 	if ( HAL_TIM_PWM_Init(&hPWM) != HAL_OK)
 	{
-		UARTprintmsg("PWM_Init error \r\n");
+		RF_SendMsg("PWM_Init error \r\n");
 		Error_Handler();
 	}
 
@@ -28,25 +28,25 @@ void PWM_Timer_Initialization(void)
 
 	if( HAL_TIM_PWM_ConfigChannel(&hPWM, &tim2PWM_Config, TIM_CHANNEL_1) != HAL_OK )
 	{
-		UARTprintmsg("HAL_TIM_PWM_ConfigChannel1 error \r\n");
+		RF_SendMsg("HAL_TIM_PWM_ConfigChannel1 error \r\n");
 		Error_Handler();
 	}
 
 	if( HAL_TIM_PWM_ConfigChannel(&hPWM, &tim2PWM_Config, TIM_CHANNEL_2) != HAL_OK )
 	{
-		UARTprintmsg("HAL_TIM_PWM_ConfigChannel2 error \r\n");
+		RF_SendMsg("HAL_TIM_PWM_ConfigChannel2 error \r\n");
 		Error_Handler();
 	}
 	//
 	//	if( HAL_TIM_PWM_ConfigChannel(&hPWM, &tim2PWM_Config, TIM_CHANNEL_3) != HAL_OK )
 	//	{
-	//		UARTprintmsg("HAL_TIM_PWM_ConfigChannel3 error \r\n");
+	//		RF_SendMsg("HAL_TIM_PWM_ConfigChannel3 error \r\n");
 	//		Error_Handler();
 	//	}
 	//
 	//	if( HAL_TIM_PWM_ConfigChannel(&hPWM, &tim2PWM_Config, TIM_CHANNEL_4) != HAL_OK )
 	//	{
-	//		UARTprintmsg("HAL_TIM_PWM_ConfigChannel4 error \r\n");
+	//		RF_SendMsg("HAL_TIM_PWM_ConfigChannel4 error \r\n");
 	//		Error_Handler();
 	//	}
 }
@@ -77,25 +77,25 @@ void PWM_Initialization(void)
 	PWM_Timer_Initialization();
 	if( HAL_TIM_PWM_Start(&hPWM, TIM_CHANNEL_1) != HAL_OK )
 	{
-		UARTprintmsg("HAL_TIM_PWM_Start error \r\n");
+		RF_SendMsg("HAL_TIM_PWM_Start error \r\n");
 		Error_Handler();
 	}
 
 	if( HAL_TIM_PWM_Start(&hPWM, TIM_CHANNEL_2) != HAL_OK )
 	{
-		UARTprintmsg("HAL_TIM_PWM_Start error \r\n");
+		RF_SendMsg("HAL_TIM_PWM_Start error \r\n");
 		Error_Handler();
 	}
 
 //	if( HAL_TIM_PWM_Start(&hPWM, TIM_CHANNEL_3) != HAL_OK )
 //	{
-//		UARTprintmsg("HAL_TIM_PWM_Start error \r\n");
+//		RF_SendMsg("HAL_TIM_PWM_Start error \r\n");
 //		Error_Handler();
 //	}
 //
 //	if( HAL_TIM_PWM_Start(&hPWM, TIM_CHANNEL_4) != HAL_OK )
 //	{
-//		UARTprintmsg("HAL_TIM_PWM_Start error \r\n");
+//		RF_SendMsg("HAL_TIM_PWM_Start error \r\n");
 //		Error_Handler();
 //	}
 
